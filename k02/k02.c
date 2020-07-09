@@ -27,7 +27,7 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
 
-
+    
     
 
 
@@ -52,3 +52,9 @@ double p_stdnorm(double z)
     return 1/sqrt(2*M_PI) * exp(-z*z/2);
 }
 
+double p_stdnorm(double y)
+{
+    double f;
+    f = 1/sqrt(2*M_PI) * exp(-x*z/2);
+    return f;
+}
