@@ -3,8 +3,8 @@
 #include <string.h>
 #include <math.h>
 
-extern double ave_online(double val, double ave)
-extern double var_online(double val, double ave, double square_ave)
+extern double ave_online(double val, double ave);
+extern double var_online(double val, double ave, double square_ave);
 
 int main(void)
 {
