@@ -27,11 +27,11 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
 
-    
-    
+        double Ya = (val - 170.8) / 5.43;
+        double Yb = (val - 169.7) / 5.5;
 
-
-
+        L1 = p_stdnorm(Ya)*L1;
+        L2 = p_stdnorm(Yb)*L2;
     }
 
     if(fclose(fp) == EOF){
@@ -39,22 +39,13 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-    printf("L_A: %f\n",max_val);
-    printf("L_B: %f\n",min_val);
+    printf("L_A: %f\n",L1);
+    printf("L_B: %f\n",L2);
 
     return 0;
-
-
 }
 
 double p_stdnorm(double z)
 {
     return 1/sqrt(2*M_PI) * exp(-z*z/2);
-}
-
-double p_stdnorm(double y)
-{
-    double f;
-    f = 1/sqrt(2*M_PI) * exp(-x*z/2);
-    return f;
 }
