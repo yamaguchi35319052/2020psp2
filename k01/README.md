@@ -60,4 +60,60 @@ population variance (estimated)：
 
 ## 修正履歴
 
-説明は「かきくけこ」だ！
+[comment #20200710 sonoda]
+エラーはわかってください．たくさん出ていますが，上から順に解決していくと減っていきます．
+
+```
+k01.c:34:9: error: use of undeclared identifier 'n'
+        n++;
+        ^
+```
+
+34行目の９文字目にエラー．未定義の識別子`n`の使用．
+
+→　`n++`と書かれているけれど，nが定義されていない．（nを定義してください）
+
+```k01.c:35:47: error: expected ';' after expression
+        var = var_online(val, ave, square_ave)
+                                              ^
+                                              ;
+k01.c:36:56: error: expected ';' after expression
+        square_ave = ave_online(pow(val,2), square_ave)
+                                                       ^
+                                                       ;
+k01.c:37:35: error: expected ';' after expression
+        ave = ave_online(val, ave)
+                                  ^
+                                  ;
+```
+
+35，36，37行目の最終文字にエラー．式の後ろは｀;`が期待されるが（今のソースコードにそれがない）
+
+
+```
+k01.c:40:9: error: use of undeclared identifier 'n'
+    u = n*var/(n-1)
+        ^
+k01.c:40:16: error: use of undeclared identifier 'n'
+    u = n*var/(n-1)
+               ^
+k01.c:44:69: error: use of undeclared identifier 'n'
+    printf("population mean (estimated)：%.2f±%.2f\n", ave,sqrt(u/n);
+                                                                  ^
+```
+
+一番上のエラーと同じ．`n`の定義をしてください．
+
+```
+k01.c:67:2: error: expected '}'
+}
+ ^
+k01.c:10:1: note: to match this '{'
+{
+^
+```
+
+10行目に`{`があるのだから，それと対応するように，67行目には１｀｝｀があるべきでは，というエラー
+
+- とりあへず，解決してみてください．解決できないようならまた聞いてください．
+
