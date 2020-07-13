@@ -3,9 +3,10 @@
 #include <string.h>
 #include <math.h>
 
-extern double ave_online(double val, double ave)
-extern double var_online(double val, double ave, double square_ave)
+extern double ave_online(double val, double ave);
+extern double var_online(double val, double ave, double square_ave);
 
+double n = 0;
 int main(void)
 {
     double val;
@@ -32,16 +33,16 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
         n++;
-        var = var_online(val, ave, square_ave)
-        square_ave = ave_online(pow(val,2), square_ave)
-        ave = ave_online(val, ave)
+        var = var_online(val, ave, square_ave);
+        square_ave = ave_online(pow(val,2), square_ave);
+        ave = ave_online(val, ave);
     }
     
-    u = n*var/(n-1)
+    u = n*var/(n-1);
 
     printf("sample mean：%.2f\n", ave);
     printf("sample variance：%.2f\n",var);
-    printf("population mean (estimated)：%.2f±%.2f\n", ave,sqrt(u/n);
+    printf("population mean (estimated)：%.2f±%.2f\n", ave,sqrt(u/n));
     printf("population variance (estimated)：%.2f\n", u);
     
     if(fclose(fp) == EOF){
@@ -62,6 +63,6 @@ double ave_online(double val,double ave){
 
 double var_online(double val, double ave, double square_ave){
     double var;
-    var = ((n-1)*square_ave/n + pow(val,2)/2) - pow((n-1)*ave/n + val/n,2)
+    var = ((n-1)*square_ave/n + pow(val,2)/n) - pow(((n-1)*ave/n + val/n),2);
     return var;
 }
