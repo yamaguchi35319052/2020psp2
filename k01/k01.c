@@ -7,6 +7,7 @@ extern double ave_online(double val, double ave);
 extern double var_online(double val, double ave, double square_ave);
 
 double n = 0;
+
 int main(void)
 {
     double val;
