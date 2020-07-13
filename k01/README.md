@@ -48,14 +48,13 @@ aa83988848 薗田光太郎
 40行目～　母集団分散uを求め、標本平均、標本分散、母集団平均、母集団分散を出力
 
 ## 入出力結果
-
 ```
 input the filename of sample:../sample/heights_male.csv
 the filename of sample: ../sample/heights_male.csv
-sample mean：
-sample variance：
-population mean (estimated)：
-population variance (estimated)：
+sample mean：173.89
+sample variance：25.36
+population mean (estimated)：173.89±1.90
+population variance (estimated)：28.98
 ```
 
 ## 修正履歴
