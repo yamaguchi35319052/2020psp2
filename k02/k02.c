@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#define MU_A 170.8
+#define STDV_A 5.43
+#define MU_B 169.7
+#define STDV_B 5.5
 
 extern double p_stdnorm(double z);
 
@@ -27,8 +31,8 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
 
-        double Ya = (val - 170.8) / 5.43;
-        double Yb = (val - 169.7) / 5.5;
+        double Ya = (val - MU_A) / STDV_A;
+        double Yb = (val - MU_B) / STDV_B;
 
         L1 = p_stdnorm(Ya)*L1;
         L2 = p_stdnorm(Yb)*L2;
