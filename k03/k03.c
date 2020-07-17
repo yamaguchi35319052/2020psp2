@@ -12,16 +12,15 @@
 extern double r_unif(void);
 extern double r_stdnorm(void);
 
-int main(int argc, char* argv[])
+int main(int i,char* argv[])
 {
     int num_dummy;
-    float mu;
-    float sigma;
-    int i;
+    double mu;
+    double sigma;
     double dummy;
 
-    sscanf(argv[1], "%1f", &mu);
-    sscanf(argv[2], "%1f", &sigma);
+    sscanf(argv[1], "%lf", &mu);
+    sscanf(argv[2], "%lf", &sigma);
     sscanf(argv[3], "%d", &num_dummy);
 
     

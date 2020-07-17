@@ -66,6 +66,8 @@ int main(int argc, char* argv[])
 
 
 ## ソースコードの説明
+22～24行目　sscanf関数でmu,sigma,num_dummyの数値を読み取る
+34行目～　　num_dummyの数だけdummyを捏造
 
 ## 入出力結果
 
@@ -83,9 +85,17 @@ Num of dummy data: 5
 168.59
 166.74
 ```
-
 コンパイル時に`-DCONST_SEED`をつけない場合を以下に示す．
-
+============================================
+template mean: 170.8
+template standard deviation: 5.43
+Num of dummy data: 5
+============================================
+163.00
+167.42
+167.18
+169.69
+174.82
 
 
 ## 修正履歴
