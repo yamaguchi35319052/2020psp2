@@ -34,8 +34,8 @@ int main(void)
         double Ya = (val - MU_A) / STDV_A;
         double Yb = (val - MU_B) / STDV_B;
 
-        L1 = p_stdnorm(Ya)*L1;
-        L2 = p_stdnorm(Yb)*L2;
+        L1 = p_stdnorm(Ya) * L1;
+        L2 = p_stdnorm(Yb) * L2;
     }
 
     if(fclose(fp) == EOF){
