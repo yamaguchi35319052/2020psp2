@@ -12,6 +12,12 @@ aa83988848 薗田光太郎
 
 ## ソースコードの説明
 
+6～11行目　typedefを使いDataという構造体を定義
+22行目～　ファイル名を入力し、性別と身長の値を読み取る。
+47行目～　IDに関しても同様の操作を行う
+68行目～　IDを入力し、該当するものがあるなら性別と身長を出力する。ないならNo dataと出力する。
+
+
 
 ## 入出力結果
 
@@ -36,6 +42,22 @@ Which ID's data do you want? : 45313124
 ---
 No data
 ```
+
+Input the filename of sample height:../sample/heights.csv
+the filename of sample: ../sample/heights.csv
+Input the filename of sample ID:../sample/IDs.csv
+the filename of sample: ../sample/IDs.csv
+Which ID's data do you want? :45313125
+ID : 45313125
+gender : female
+height : 152.4
+
+Input the filename of sample height:../sample/heights.csv
+the filename of sample: ../sample/heights.csv
+Input the filename of sample ID:../sample/IDs.csv    
+the filename of sample: ../sample/IDs.csv
+Which ID's data do you want? :45313124
+No data
 
 ## 修正履歴
 
