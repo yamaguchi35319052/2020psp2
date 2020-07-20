@@ -60,3 +60,6 @@ Likelihood for B：0.000002
   double Yb = (val - MU_B) / STDV_B;
   ```
   などとするのです．
+  
+[comment #20200720 sonoda]
+- 課題2の完了を確認しました．（薗田）
