@@ -58,6 +58,12 @@ sample variance：25.36
 population mean (estimated)：173.89±1.90
 population variance (estimated)：28.98
 ```
+input the filename of sample:../sample/heights_male.csv
+the filename of sample: ../sample/heights_male.csv
+sample mean：-1.#J
+sample variance：-1.#J
+population mean (estimated)：-1.#J±-1.#J
+population variance (estimated)：-1.#J
 
 ## 修正履歴
 

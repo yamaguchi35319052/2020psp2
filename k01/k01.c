@@ -6,7 +6,6 @@
 extern double ave_online(double val, double ave);
 extern double var_online(double val, double ave, double square_ave);
 
-double n = 0;
 
 int main(void)
 {
@@ -15,6 +14,7 @@ int main(void)
     double square_ave = 0;
     double var = 0;
     double u = 0;
+    double n = 0;
 
     char fname[FILENAME_MAX];
     char buf[256];
@@ -58,11 +58,13 @@ int main(void)
 }
 
 double ave_online(double val,double ave){
+    double n = 0;
     ave = ((n-1)*ave + val)/n; 
     return ave;
 }
 
 double var_online(double val, double ave, double square_ave){
+    double n = 0;
     double var;
     var = ((n-1)*square_ave/n + pow(val,2)/n) - pow(((n-1)*ave/n + val/n),2);
     return var;
