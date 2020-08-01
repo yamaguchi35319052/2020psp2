@@ -3,8 +3,8 @@
 #include <string.h>
 #include <math.h>
 
-extern double ave_online(double val, double ave);
-extern double var_online(double val, double ave, double square_ave);
+extern double ave_online(double val, double ave, int n);
+extern double var_online(double val, double ave, double square_ave, int n);
 
 
 int main(void)
@@ -34,9 +34,9 @@ int main(void)
     while(fgets(buf,sizeof(buf),fp) != NULL){
         sscanf(buf,"%lf",&val);
         n++;
-        var = var_online(val, ave, square_ave);
-        square_ave = ave_online(pow(val,2), square_ave);
-        ave = ave_online(val, ave);
+        var = var_online(val, ave, square_ave, n);
+        square_ave = ave_online(pow(val,2), square_ave, n);
+        ave = ave_online(val, ave, n);
     }
     
     u = n*var/(n-1);
@@ -57,14 +57,12 @@ int main(void)
 
 }
 
-double ave_online(double val,double ave){
-    double n = 0;
+double ave_online(double val,double ave, int n){
     ave = ((n-1)*ave + val)/n; 
     return ave;
 }
 
-double var_online(double val, double ave, double square_ave){
-    double n = 0;
+double var_online(double val, double ave, double square_ave, int n){ 
     double var;
     var = ((n-1)*square_ave/n + pow(val,2)/n) - pow(((n-1)*ave/n + val/n),2);
     return var;
