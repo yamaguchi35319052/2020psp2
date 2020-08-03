@@ -58,19 +58,6 @@ sample variance：25.36
 population mean (estimated)：173.89±1.90
 population variance (estimated)：28.98
 ```
-input the filename of sample:../sample/heights_male.csv
-the filename of sample: ../sample/heights_male.csv
-sample mean：-1.#J
-sample variance：-1.#J
-population mean (estimated)：-1.#J±-1.#J
-population variance (estimated)：-1.#J
-
-input the filename of sample:../sample/heights_male.csv
-the filename of sample: ../sample/heights_male.csv
-sample mean：173.89
-sample variance：25.36
-population mean (estimated)：173.89±1.90
-population variance (estimated)：28.98
 
 ## 修正履歴
 
@@ -138,3 +125,6 @@ k01.c:10:1: note: to match this '{'
 
 [comment #20200728]
 - 修正の指示、アドバイス等は特にありません。引き続き先生に提出をお願いします。
+
+[comment #20200804 sonoda]
+- OKです．課題1の完了を確認しました．
